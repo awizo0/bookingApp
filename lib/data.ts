@@ -1,0 +1,122 @@
+import type {
+  BaseRoom,
+  PremiumRoom,
+  Reservation,
+  BookingChartData,
+} from "@/types/booking";
+
+export const rooms: (BaseRoom | PremiumRoom)[] = [
+  {
+    id: "room-1",
+    name: "Classic Comfort",
+    type: "standard",
+    pricePerNight: 120,
+    maxGuests: 2,
+    description:
+      "A cozy standard room with all essential amenities for a comfortable stay.",
+    amenities: ["Wi-Fi", "TV", "Air Conditioning", "Mini Bar"],
+    imageUrl: "/rooms/standard.jpg",
+  },
+  {
+    id: "room-2",
+    name: "Royal Suite",
+    type: "premium",
+    pricePerNight: 280,
+    maxGuests: 3,
+    description:
+      "An elegant premium room with luxury furnishings and panoramic views.",
+    amenities: ["Wi-Fi", "TV", "Air Conditioning", "Mini Bar", "Room Service", "Spa Access"],
+    imageUrl: "/rooms/premium.jpg",
+    hasJacuzzi: true,
+    hasBalcony: true,
+    floorLevel: 12,
+    conciergeService: true,
+  },
+  {
+    id: "room-3",
+    name: "Grand Apartment",
+    type: "apartment",
+    pricePerNight: 450,
+    maxGuests: 6,
+    description:
+      "A spacious apartment with a fully equipped kitchen and separate living area.",
+    amenities: [
+      "Wi-Fi",
+      "TV",
+      "Air Conditioning",
+      "Kitchen",
+      "Washer",
+      "Parking",
+      "Balcony",
+    ],
+    imageUrl: "/rooms/apartment.jpg",
+  },
+];
+
+export const mockReservations: Reservation[] = [
+  {
+    id: "res-001",
+    guestName: "Anna Kowalska",
+    roomName: "Classic Comfort",
+    roomType: "standard",
+    checkIn: "2026-03-10",
+    checkOut: "2026-03-14",
+    status: "confirmed",
+    totalPrice: 480,
+  },
+  {
+    id: "res-002",
+    guestName: "Jan Nowak",
+    roomName: "Royal Suite",
+    roomType: "premium",
+    checkIn: "2026-03-15",
+    checkOut: "2026-03-18",
+    status: "pending",
+    totalPrice: 840,
+  },
+  {
+    id: "res-003",
+    guestName: "Maria Wisniewska",
+    roomName: "Grand Apartment",
+    roomType: "apartment",
+    checkIn: "2026-04-01",
+    checkOut: "2026-04-07",
+    status: "confirmed",
+    totalPrice: 2700,
+  },
+  {
+    id: "res-004",
+    guestName: "Piotr Zielinski",
+    roomName: "Classic Comfort",
+    roomType: "standard",
+    checkIn: "2026-02-20",
+    checkOut: "2026-02-22",
+    status: "cancelled",
+    totalPrice: 240,
+  },
+  {
+    id: "res-005",
+    guestName: "Katarzyna Lewandowska",
+    roomName: "Royal Suite",
+    roomType: "premium",
+    checkIn: "2026-04-12",
+    checkOut: "2026-04-15",
+    status: "confirmed",
+    totalPrice: 840,
+  },
+];
+
+export const bookingChartData: BookingChartData[] = [
+  { month: "Jan", standard: 45, premium: 28, apartment: 12 },
+  { month: "Feb", standard: 52, premium: 35, apartment: 18 },
+  { month: "Mar", standard: 61, premium: 42, apartment: 22 },
+  { month: "Apr", standard: 70, premium: 50, apartment: 30 },
+  { month: "May", standard: 85, premium: 62, apartment: 35 },
+  { month: "Jun", standard: 95, premium: 75, apartment: 45 },
+  { month: "Jul", standard: 110, premium: 88, apartment: 52 },
+  { month: "Aug", standard: 105, premium: 82, apartment: 48 },
+  { month: "Sep", standard: 78, premium: 58, apartment: 32 },
+  { month: "Oct", standard: 65, premium: 45, apartment: 25 },
+  { month: "Nov", standard: 50, premium: 32, apartment: 15 },
+  { month: "Dec", standard: 72, premium: 55, apartment: 28 },
+];
